@@ -5,7 +5,7 @@ import GreetingContainer from './greeting/greeting_container'
 
 const App = () => (
   <div>
-    <h1>Listen to my music</h1>
+    <h1>Borrow Books Here!</h1>
     {/* <Route exact path="/" component={Home} />
     <Route path="/signup" component={SignupContainer} /> */}
     <GreetingContainer />

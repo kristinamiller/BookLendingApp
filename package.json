@@ -1,5 +1,5 @@
 {
-  "name": "AcousticSounds",
+  "name": "BookLending",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.6.0",
@@ -29,13 +29,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kristinamiller/AcousticSounds.git"
+    "url": "git+https://github.com/kristinamiller//BookLendingApp.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kristinamiller/AcousticSounds/issues"
+    "url": "https://github.com/kristinamiller//BookLendingApp/issues"
   },
-  "homepage": "https://github.com/kristinamiller/AcousticSounds#readme"
+  "homepage": "https://github.com/kristinamiller//BookLendingApp#readme"
 }
