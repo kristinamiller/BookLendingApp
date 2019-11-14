@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'open-uri'
+
+ActiveRecord::Base.transaction do 
+
+  Book.destroy_all
+
+  book1 = Book.create!(title: "The Grapes of Wrath", author: "John Steinbeck")
+  
+  book2 = Book.create!(title: "The Unbearable Lightness of Being", author: "Milan Kundera")
+
+  book3 = Book.create!(title: "Bird by Bird", author: "Anne Lamott")
+
+  book4 = Book.create!(title: "And the Mountains Echoed", author: "Khaled Hosseini")
+
+end
+
