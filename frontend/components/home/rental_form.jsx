@@ -7,8 +7,7 @@ class RentalForm extends React.Component {
     this.state = {
       title: "",
       genre_id: 10,
-      description: "",
-      artist_id: this.props.currentUser.id
+      description: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
@@ -66,57 +65,51 @@ class RentalForm extends React.Component {
 
     return (
       <div className="rental-form-container">
-        <form className="rental-form" onSubmit={this.handleSubmit}>
-          <h1 className="rental-header">Song info</h1>
-          <h3 className="rental-errors">{this.renderErrors()}</h3>
-          <div className="rental-left-inputs-right">
-            <div className="rental-files">
-              <label className="rental-label">
-                rental Track
-                <input type="file" onChange={this.handleAudio} />
-              </label>
-            </div>
-            <div className="form-input-fields">
-              <div className="rental-label"></div>
-              <label className="rental-label">
-                Title*
-                <input
-                  type="text"
-                  value={this.state.title}
-                  placeholder="Name your track"
-                  onChange={this.handleInput("title")}
-                  className="rental-input"
-                />
-              </label>
-              <div className="rental-label">
-                <label className="rental-label">
-                  Choose Book
-                  <select className="book-dropdown" defaultValue="Select Book">
-                    {
-                    Object.values(booklist).map(book => {
-                      return (
-                        <option
-                          className="book-dropdown-item"
-                          value={book.id}
-                          key={book.id}
-                          onChange={this.handleInput("book")}
-                        >
-                          {book.title}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </label>
-              </div>
 
-              <div className="rental-buttons">
-                <button onClick={this.handleCancel} className="rental-cancel">
-                  Cancel
-                </button>
-                <input type="submit" value="Save" className="rental-submit" />
-              </div>
-            </div>
+        <form className="rental-form" onSubmit={this.handleSubmit}>
+        <h1 className="rental-heading">Borrow a Book</h1>
+          <div className="form-input-fields">
+            <label className="upload-label">
+              <input
+                type="text"
+                value={this.state.username}
+                placeholder="username"
+                onChange={this.handleInput("username")}
+                className="upload-input"
+              />
+            </label>
+            <label className="upload-label">
+              <input
+                type="text"
+                value={this.state.username}
+                placeholder="member number"
+                onChange={this.handleInput("username")}
+                className="upload-input"
+              />
+            </label>
+            <label className="upload-label">
+              Title
+              <select className="book-dropdown" defaultValue="Select Book">
+                {Object.values(booklist).map(book => {
+                  return (
+                    <option
+                      className="book-dropdown-item"
+                      value={book.id}
+                      key={book.title}
+                      onChange={this.handleInput("book")}
+                    >
+                      {book.title}
+                    </option>
+                  );
+                })}
+              </select>
+            </label>
           </div>
+          <input
+            type="submit"
+            value="Reserve Your Book"
+            className="upload-submit"
+          />
         </form>
       </div>
     );

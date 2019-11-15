@@ -1,10 +1,13 @@
 import React from "react";
-import RentalForm from './rental_form';
+import RentalFormContainer from './rental_form_container';
+import { Link } from "react-router-dom";
+
 
 class BookIndex extends React.Component {
   constructor(props) {
     super(props);
-    // this.renderRentalForm = this.renderRentalForm.bind(this);
+    this.renderRentalForm = this.renderRentalForm.bind(this);
+    this.showRentalForm = this.showRentalForm.bind(this);
     this.rentalFormVisible = false;
   }
 
@@ -12,15 +15,15 @@ class BookIndex extends React.Component {
     this.props.fetchBooks();
   }
 
-  renderRentalLink(status) {
+  renderRentalLink(status, bookId) {
     if (status === "available") {
       return (
-          <button 
+          <Link 
             className="borrow-button"
-            // onClick={this.showRentalForm()}
+            to={`/books/${bookId}`}
           >
             Borrow This Book
-          </button>
+          </Link>
       );
     }
   }
@@ -33,7 +36,7 @@ class BookIndex extends React.Component {
     if (this.rentalFormVisible) {
       return <div className="book-rental-form">Book Rental Form</div>;
     }
-    
+    // return <div className="book-rental-form">Book Rental Form</div>;
   }
 
   render() {
@@ -43,25 +46,27 @@ class BookIndex extends React.Component {
     }
 
     return (
-      <div className="book-index-container">
-        {/* <h1>Books</h1> */}
-        <ul>
-          {
-            Object.values(booklist).map((book) => {
-            return (
-              <div key={book.id}>
-                <li className="book-li">
-                  <h2 className="book-title">{book.title}</h2>
-                  <h2 className="book-author">{book.author}</h2>
-                  <h2 className="book-status">{book.rental_status}</h2>
-                  {this.renderRentalLink(book.rental_status)}
-                </li>
-                {this.renderRentalForm()}
-              </div>
-            );
-            })
-          }
-        </ul>
+      <div className="main-section">
+        <div className="book-index-container">
+          {/* <h1>Books</h1> */}
+          <ul>
+            {Object.values(booklist).map(book => {
+              return (
+                <div key={book.id}>
+                  <li className="book-li">
+                    <h2 className="book-title">{book.title}</h2>
+                    <h2 className="book-author">{book.author}</h2>
+                    <h2 className="book-status">{book.rental_status}</h2>
+                    {/* {this.renderRentalLink(book.rental_status, book.id)} */}
+                  </li>
+                </div>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="rental-form-section">
+          <RentalFormContainer />
+        </div>
       </div>
     );
   }
