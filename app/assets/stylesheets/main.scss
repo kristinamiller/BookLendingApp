@@ -1,0 +1,79 @@
+html {
+  height: 100%;
+}
+
+body {
+   
+   font-family: 'Helvetica', sans-serif;
+   color: black;
+   font-weight: 100;
+  //   background: image-url('background-books-2.jpg');
+  // background-size: cover;
+  width: 100%;
+  height: 100%;
+  // opacity: 0.5;
+ }
+
+#root {
+  // background: green;
+  width: 100%;
+  height: 100%;
+}
+
+.body-div {
+
+background: white;
+width: 100%;
+height: 100%;
+}
+
+.page-title {
+  font-size: 30px;
+  color: black;
+  
+  padding: 20px;
+  padding-left: 60px;
+}
+
+.book-index-container {
+
+}
+
+.book-li {
+  display: flex;
+  flex-direction: row;
+  // background: rgb(136, 177, 252);
+  // background: rgb(186, 191, 255);
+  background: white;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 1rem rgba(0,0,0,.2);
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 5px 30px 5px 30px;
+}
+
+h2 {
+  padding: 10px;
+}
+
+.book-title {
+  width: 300px;
+}
+.book-author {
+  width: 200px;
+}
+.book-status {
+  width: 100px;
+}
+
+.borrow-button {
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgb(23, 7, 94);
+}
+
+.book-rental-form {
+  background: red;
+
+}

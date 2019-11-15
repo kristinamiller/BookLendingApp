@@ -10,9 +10,9 @@
 
 class Member < ApplicationRecord
 
-  has_many :rentals,
-  foreign_key: :member_id,
-  class_name: :Rental
+  # has_many :books,
+  # foreign_key: :member_id,
+  # class_name: :Book
 
 
 end

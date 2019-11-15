@@ -1,3 +1,28 @@
 // Place all the styles related to the api/books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ button, select,
+input[type="submit"] {
+  cursor: pointer; 
+}
+
+input:focus {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+textarea:focus {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+ body {
+   background: red;
+   font-family: sans-serif;
+   color: black;
+   font-weight: 100;
+  //  margin-left: 5%;
+  //  margin-right: 5%;
+ }
