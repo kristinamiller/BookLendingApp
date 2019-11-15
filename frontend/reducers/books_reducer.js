@@ -1,5 +1,5 @@
 import {
-  RECEIVE_ALL_BOOKS
+  RECEIVE_ALL_BOOKS, RESERVE_BOOK
 } from "../actions/book_actions";
 
 const booksReducer = (state = {}, action) => {
@@ -12,6 +12,8 @@ const booksReducer = (state = {}, action) => {
       Object.keys(action.books).forEach(bookId => {
         newState[bookId] = action.books[bookId];
       });
+      return newState;
+    case RESERVE_BOOK:
       return newState;
     default:
       return state;

@@ -5,9 +5,7 @@ class RentalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      genre_id: 10,
-      description: ""
+      title: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
@@ -43,9 +41,6 @@ class RentalForm extends React.Component {
       );
   }
 
-  handleCancel(e) {
-    this.props.history.push(`/${this.props.currentUser.id}/tracks`);
-  }
 
   renderErrors() {
     return (
