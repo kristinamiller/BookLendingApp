@@ -7,9 +7,9 @@ class RentalForm extends React.Component {
     this.state = {
       title: ""
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleInput = this.handleInput.bind(this);
+    // this.handleCancel = this.handleCancel.bind(this);
   }
 
   componentDidMount() {
