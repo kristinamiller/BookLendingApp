@@ -6,34 +6,49 @@ import { Link } from "react-router-dom";
 class BookIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.renderRentalForm = this.renderRentalForm.bind(this);
-    this.showRentalForm = this.showRentalForm.bind(this);
-    this.rentalFormVisible = false;
+
+    this.state = {
+      selectedBook: 0
+    }
+
+  
   }
 
   componentDidMount() {
     this.props.fetchBooks();
   }
 
+
+  selectBook(id) {
+    this.setState({selectedBook: id})
+  }
+
   renderRentalLink(status, bookId) {
     if (status === "available") {
       return (
-          <Link 
-            className="borrow-button"
-            to={`/books/${bookId}`}
-          >
-            Borrow This Book
-          </Link>
+          // <Link 
+          //   className="borrow-button"
+          //   to={`/books/${bookId}`}
+          // >
+          //   Borrow This Book
+          // </Link>
+
+        <button
+          onClick={() => this.selectBook(bookId)}
+        >
+          Borrow This Book
+        </button>
+
       );
     }
   }
 
-  showRentalForm() {
-    this.rentalFormVisible = true;
-  }
+  // showRentalForm() {
+  //   this.rentalFormVisible = true;
+  // }
 
-  renderRentalForm() {
-    if (this.rentalFormVisible) {
+  renderRentalForm(id) {
+    if (id === this.state.selectedBook) {
       return <div className="book-rental-form">Book Rental Form</div>;
     }
     // return <div className="book-rental-form">Book Rental Form</div>;
@@ -57,8 +72,9 @@ class BookIndex extends React.Component {
                     <h2 className="book-title">{book.title}</h2>
                     <h2 className="book-author">{book.author}</h2>
                     <h2 className="book-status">{book.rental_status}</h2>
-                    {/* {this.renderRentalLink(book.rental_status, book.id)} */}
+                    {this.renderRentalLink(book.rental_status, book.id)}
                   </li>
+                  {this.renderRentalForm(book.id)}
                 </div>
               );
             })}

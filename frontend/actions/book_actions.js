@@ -17,3 +17,5 @@ export const reserveBook = book => ({
   type: RESERVE_BOOK,
   book
 });
+
+// updateBook

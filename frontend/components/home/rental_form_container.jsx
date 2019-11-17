@@ -11,6 +11,7 @@ const msp = state => {
 
 const mdp = dispatch => ({
   fetchBooks: () => dispatch(fetchBooks())
+  // updateBook
 });
 
 export default connect(msp, mdp)(RentalForm);
